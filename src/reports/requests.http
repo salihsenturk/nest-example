@@ -1,0 +1,26 @@
+### Create a new report
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+	"make": "mercedes",
+	"model": "benz",
+	"year": 2011,
+	"lng": 1,
+	"lat": 1,
+	"milage": 120000, 
+	"price": 4500
+}
+
+### Approve / Reject report
+PATCH  http://localhost:3000/reports/8
+content-type: application/json
+
+{
+	"approved": true
+}
+
+### Get an estimate for the car with the given properties
+GET http://localhost:3000/reports?make=mercedes&model=benz&year=2010&lng=0&lat=0&milage=10000
+content-type: application/json
+
